@@ -79,7 +79,7 @@ form .signup_select {
   width: 100%;
 }
 #create_acc {
-  padding: 0.75rem;
+  /* padding: 0.75rem;
   margin: auto;
   display: block;
   padding: 7px;
@@ -91,7 +91,17 @@ form .signup_select {
   cursor: pointer;
   transition: 0.3s;
   border-radius: 20px;
-  width:40%;
+  width:40%; */
+  width: 60%;
+  height: 45px;
+  margin: 0 85px;
+  background-color: rgba(80, 68, 217, 0.8);
+  border-radius: 25px;
+  font-size: 18px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
 }
 #create_acc:hover {
   border-color: rgb(3, 3, 90);
