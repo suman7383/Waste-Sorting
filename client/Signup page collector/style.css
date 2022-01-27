@@ -5,7 +5,7 @@
   font-family: "Poppins", sans-serif;
 }
 body {
-  background-image: url(bg.jpg);
+  background-image: url(bg_signup_collector.png);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -18,15 +18,16 @@ body {
   background-color: white;
   width: 500px;
   border-radius: 15px;
-  box-shadow: 10px 10px 15px rgb(76, 76, 236);
+  /* box-shadow: 10px 10px 15px rgb(76, 76, 236); */
 }
 .container h1 {
+  font-size:30px;
   text-align: center;
-  padding: 20px 0;
+  padding: 10px 0;
   border-bottom: 1px solid grey;
 }
 .container form {
-  padding: 0 40px;
+  padding: 25px 40px;
   box-sizing: border-box;
 }
 form .signup {
@@ -66,30 +67,32 @@ form .signup_select {
   left: 0;
   width: 0%;
   height: 2px;
-  background-color: rgb(20, 168, 218);
+  background-color: rgba(80, 68, 217, 0.8);
   transition-duration: 0.5s;
 }
 .signup input:focus ~ label,
 .signup input:valid ~ label {
   top: -5px;
-  color: rgb(20, 168, 218);
+  color: rgba(80, 68, 217, 0.8);
 }
 .signup input:focus ~ span::before,
 .signup input:valid ~ span::before {
   width: 100%;
 }
 #create_acc {
-  width: 60%;
-  height: 45px;
-  margin: 0 80px 20px 80px;
-  border: 1px solid rgb(20, 168, 218);
-  background-color: rgb(20, 168, 218);
-  border-radius: 25px;
-  font-size: 18px;
-  color: whitesmoke;
-  font-weight: 700;
+  padding: 0.75rem;
+  margin: auto;
+  display: block;
+  padding: 7px;
+  text-decoration: none;
+  background-color: rgba(80, 68, 217, 0.8);
+  color: #f3f3f3;
+  text-align: center;
+  border-radius: 0.25rem;
   cursor: pointer;
-  outline: none;
+  transition: 0.3s;
+  border-radius: 20px;
+  width:40%;
 }
 #create_acc:hover {
   border-color: rgb(3, 3, 90);

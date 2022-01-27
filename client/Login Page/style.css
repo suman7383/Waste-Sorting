@@ -10,7 +10,7 @@ body {
   padding: 0;
   /* height: 100vh;
   overflow: hidden; */
-  background-image: url(bg.jpg);
+  background-image: url(bg_login.png);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -23,7 +23,7 @@ body {
   transform: translate(-50%, -50%);
   width: 400px;
   border-radius: 10px;
-  box-shadow: 10px 10px 15px grey;
+  /* box-shadow: 10px 10px 15px grey; */
 }
 .container h1 {
   text-align: center;
@@ -65,13 +65,13 @@ form .login {
   left: 0;
   width: 0%;
   height: 2px;
-  background-color: rgb(20, 168, 218);
+  background-color: rgba(80, 68, 217, 0.8);
   transition-duration: 0.5s;
 }
 .login input:focus ~ label,
 .login input:valid ~ label {
   top: -5px;
-  color: rgb(20, 168, 218);
+  color: rgba(80, 68, 217, 0.8);
 }
 .login input:focus ~ span::before,
 .login input:valid ~ span::before {
@@ -79,9 +79,10 @@ form .login {
 }
 form .login_as {
   color: grey;
-  padding: 0 5px 5px 5px;
+  padding: 1px 8px 5px 5px;
   height: 40px;
   font-size: 16px;
+  width: 100%;
 }
 input[type="radio"] {
   margin: 0 5px 0 5px;
@@ -95,16 +96,19 @@ input[type="radio"] {
   text-decoration: underline;
 }
 input[type="submit"] {
-  width: 100%;
-  height: 45px;
-  border: 1px solid rgb(20, 168, 218);
-  background-color: rgb(20, 168, 218);
-  border-radius: 25px;
-  font-size: 18px;
-  color: whitesmoke;
-  font-weight: 700;
+  padding: 0.75rem;
+  display: block;
+  padding: 7px;
+  text-decoration: none;
+  background-color: rgba(80, 68, 217, 0.8);
+  color: #f3f3f3;
+  text-align: center;
+  border-radius: 0.25rem;
   cursor: pointer;
-  outline: none;
+  transition: 0.3s;
+  border-radius: 20px;
+  width:93%;
+  margin: auto;
 }
 input[type="submit"]:hover {
   border-color: rgb(3, 3, 90);
@@ -118,7 +122,7 @@ input[type="submit"]:hover {
   color: grey;
 }
 .signup_link a {
-  color: rgb(20, 168, 218);
+  color: rgba(80, 68, 217, 0.8);
   text-decoration: none;
 }
 .signup_link a:hover {
