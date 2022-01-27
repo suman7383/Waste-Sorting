@@ -21,7 +21,7 @@ body {
   /* box-shadow: 10px 10px 15px rgb(76, 76, 236); */
 }
 .container h1 {
-  font-size:30px;
+  font-size: 30px;
   text-align: center;
   padding: 10px 0;
   border-bottom: 1px solid grey;
@@ -80,7 +80,7 @@ form .signup_select {
   width: 100%;
 }
 #create_acc {
-  padding: 0.75rem;
+  /* padding: 0.75rem;
   margin: auto;
   display: block;
   padding: 7px;
@@ -92,7 +92,17 @@ form .signup_select {
   cursor: pointer;
   transition: 0.3s;
   border-radius: 20px;
-  width:40%;
+  width:40%; */
+  width: 60%;
+  height: 45px;
+  margin: 0 85px 5px 85px;
+  background-color: rgba(80, 68, 217, 0.8);
+  border-radius: 25px;
+  font-size: 18px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
 }
 #create_acc:hover {
   border-color: rgb(3, 3, 90);
