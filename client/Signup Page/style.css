@@ -66,13 +66,13 @@ form .signup_select {
   left: 0;
   width: 0%;
   height: 2px;
-  background-color: rgba(80, 68, 217, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
   transition-duration: 0.5s;
 }
 .signup input:focus ~ label,
 .signup input:valid ~ label {
   top: -5px;
-  color: rgba(80, 68, 217, 0.8);
+  color: rgba(0, 0, 0, 0.8);
 }
 .signup input:focus ~ span::before,
 .signup input:valid ~ span::before {
@@ -92,22 +92,34 @@ form .signup_select {
   transition: 0.3s;
   border-radius: 20px;
   width:40%; */
-  width: 60%;
-  height: 45px;
-  margin: 0 85px;
-  background-color: rgba(80, 68, 217, 0.8);
-  border-radius: 25px;
-  font-size: 18px;
-  color: white;
-  font-weight: 700;
-  cursor: pointer;
-  outline: none;
+  color: #fff;
+    background: black;
+    border: 2px solid black;
+    text-transform: uppercase;
+    margin: 6px auto;
+    display: flex;
+    font-weight: 900;
+    letter-spacing: 2px;
+    padding: 7px 22px;
+    border-radius: 5px;
+    transition: transform,background-color 0.3s ease-in;
+    text-decoration: none;
+
 }
 #create_acc:hover {
-  border-color: rgb(3, 3, 90);
-  background-color: rgb(53, 53, 199);
-  transition-duration: 0.5s;
+  background-color: #ffffff;
+  transition-duration: 0.3s;
+  color: black;
+  transform: scale(1.2);
+
 }
+#create_acc:active{
+  background-color: #ffffff;
+    color: rgb(0, 0, 0,0.7);
+    transition-duration: 0.1s;
+    transform: scale(1.1);
+}
+
 .collector {
   margin: 20px 20px;
   color: grey;
@@ -115,7 +127,7 @@ form .signup_select {
   font-size: 16px;
 }
 .collector a {
-  color: rgba(80, 68, 217, 0.8);
+  color: rgba(0, 0, 0, 0.8);
   text-decoration: none;
 }
 .collector a:hover {
