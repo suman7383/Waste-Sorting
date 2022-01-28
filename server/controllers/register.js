@@ -1,27 +1,34 @@
 const Registration = require("../schemas/registration");
 
 module.exports.register = async(req, res)=>{
-  const { firstName, secondName, email, password, state, city, locality} = req.body;
+  const { fname, lname, email, password, state, city, locality} = req.body;
+  const { type } = req.query;
+
+  console.log(fname,lname,email,password, state, city, locality, type);
+   res.setHeader('Access-Control-Allow-Origin', '*');
 
   try{
 
     const options = {
-      firstName,
-      secondName,
+      firstName:fname,
+      secondName:lname,
+      user_type:type,
       email,
       password,
       state,
       city,
-      locality
+      locality,
+      
     }
   
     const emailExists = await Registration.exists({email:email});
     if(emailExists){
-      res.status(200).json({err:"Email already exists"});
+
+      res.status(403).json({err:"Email already exists"});
     }else{
+
       const register = await new Registration(options);
       await register.save();
-  
       res.status(200).json({msg:"Registered Successfully!"})
     }
   }catch(err){

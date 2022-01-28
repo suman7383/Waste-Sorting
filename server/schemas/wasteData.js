@@ -5,6 +5,9 @@ const wasteDataSchema = new mongoose.Schema({
   userId:{
     type:String,
   },
+  name:{
+    type:String,
+  },
   email:{
     type:String,
     unique:true,
@@ -14,8 +17,7 @@ const wasteDataSchema = new mongoose.Schema({
   totalWasteCount:{
     type:Number,
   },
-  organicWaste:[
-    {
+  organicWaste:{
       total:{
         type:Number,
       },
@@ -23,8 +25,8 @@ const wasteDataSchema = new mongoose.Schema({
         type:Array,
       }
    }
-  ],
-  recyclableWaste:[
+  ,
+  recyclableWaste:
     {
       total:{
         type:Number,
@@ -33,8 +35,8 @@ const wasteDataSchema = new mongoose.Schema({
         type:Array,
       }
     }
-  ],
-  electronicWaste:[
+  ,
+  electronicWaste:
     {
       total:{
         type:Number,
@@ -42,8 +44,13 @@ const wasteDataSchema = new mongoose.Schema({
       waste:{
         type:Array,
       }
-    }
-  ],
+    },
+  locality:{
+    type:String,
+  },  
+  date:{
+    type:String,
+  }  
    
 },{
     timestamps : true

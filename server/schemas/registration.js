@@ -9,6 +9,9 @@ const registerSchema = new mongoose.Schema({
     type:String,
     required:true,
   },
+  user_type:{
+    type:String,
+  },
   email:{
     type:String,
     unique:true,
