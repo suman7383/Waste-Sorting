@@ -232,6 +232,7 @@ header .navigation a:active{
     margin-left: -1px; 
     margin-bottom: 50px;
     font-family: 'Alegreya', sans-serif;
+    letter-spacing: 1px;
 }
 
 .content .signup-btn{
