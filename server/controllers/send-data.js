@@ -8,7 +8,7 @@ module.exports.send = async(req, res)=>{
   res.setHeader('Access-Control-Allow-Origin', '*');
   try{
 
-    let date = Utils.date();
+    let date = '2022-1-28';
 
     const userData = await Registration.findOne({email},{firstName:1, secondName:1, locality:1});
     let name = userData.firstName+" "+userData.secondName;
@@ -50,7 +50,7 @@ module.exports.send = async(req, res)=>{
 module.exports.sendToFront = async (req, res)=>{
   const { locality } = req.query;
 
-  let date = Utils.date();
+  let date = '2022-1-28';
 
   res.setHeader('Access-Control-Allow-Origin', '*');
   try{
@@ -60,9 +60,9 @@ module.exports.sendToFront = async (req, res)=>{
     let dataToSend = [];
 
     data.forEach((elm)=>{
-      let organicPer = (elm.organicWaste.total/elm.totalWasteCount)*100;
-      let recyclablePer = (elm.recyclableWaste.total/elm.totalWasteCount)*100;
-      let electronicPer = (elm.electronicWaste.total/elm.totalWasteCount)*100;
+      let organicPer = parseFloat((elm.organicWaste.total/elm.totalWasteCount)*100).toFixed(2);
+      let recyclablePer = parseFloat((elm.recyclableWaste.total/elm.totalWasteCount)*100).toFixed(2);
+      let electronicPer = parseFloat((elm.electronicWaste.total/elm.totalWasteCount)*100).toFixed(2);
       let dataCurr={
         name :elm.name,
         organicCount : `${organicPer}%`,

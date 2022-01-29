@@ -38,6 +38,10 @@ const registerSchema = new mongoose.Schema({
     type:Number,
     required:false,
     allowNull:true,
+  },
+  collector_id:{
+    type:String,
+    required:false
   }
 
 },{

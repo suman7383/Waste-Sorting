@@ -4,11 +4,17 @@
   padding: 0;
   font-family: "Poppins", sans-serif;
 }
-body {
-  background-image: url(bg.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+body::before {
+  background: url(../images/bg_signup_collector.png) no-repeat center
+    center/cover;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  opacity: 1;
 }
 .container {
   position: absolute;
@@ -18,15 +24,16 @@ body {
   background-color: white;
   width: 500px;
   border-radius: 15px;
-  box-shadow: 10px 10px 15px rgb(76, 76, 236);
+  /* box-shadow: 10px 10px 15px rgb(76, 76, 236); */
 }
 .container h1 {
+  font-size: 30px;
   text-align: center;
-  padding: 20px 0;
+  padding: 10px 0;
   border-bottom: 1px solid grey;
 }
 .container form {
-  padding: 0 40px;
+  padding: 25px 40px;
   box-sizing: border-box;
 }
 form .signup {
@@ -66,46 +73,54 @@ form .signup_select {
   left: 0;
   width: 0%;
   height: 2px;
-  background-color: rgb(20, 168, 218);
+  background-color: rgba(0, 0, 0, 0.8);
   transition-duration: 0.5s;
 }
 .signup input:focus ~ label,
 .signup input:valid ~ label {
   top: -5px;
-  color: rgb(20, 168, 218);
+  color: rgba(0, 0, 0, 0.8);
 }
 .signup input:focus ~ span::before,
 .signup input:valid ~ span::before {
   width: 100%;
 }
 #create_acc {
-  width: 60%;
-  height: 45px;
-  margin: 0 85px;
-  border: 1px solid rgb(20, 168, 218);
-  background-color: rgb(20, 168, 218);
-  border-radius: 25px;
-  font-size: 18px;
-  color: whitesmoke;
-  font-weight: 700;
-  cursor: pointer;
-  outline: none;
-}
-#create_acc:hover {
-  border-color: rgb(3, 3, 90);
-  background-color: rgb(53, 53, 199);
-  transition-duration: 0.5s;
-}
-.collector {
-  margin: 20px 20px;
-  color: grey;
+  /* padding: 0.75rem;
+  margin: auto;
+  display: block;
+  padding: 7px;
+  text-decoration: none;
+  background-color: rgba(80, 68, 217, 0.8);
+  color: #f3f3f3;
   text-align: center;
-  font-size: 16px;
-}
-.collector a {
-  color: rgb(20, 168, 218);
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 20px;
+  width:40%; */
+  color: #fff;
+  background: black;
+  border: 2px solid black;
+  text-transform: uppercase;
+  margin: 6px auto;
+  display: flex;
+  font-weight: 900;
+  letter-spacing: 2px;
+  padding: 7px 22px;
+  border-radius: 5px;
+  transition: transform, background-color 0.3s ease-in;
   text-decoration: none;
 }
-.collector a:hover {
-  text-decoration: underline;
+#create_acc:hover {
+  background-color: #ffffff;
+  transition-duration: 0.3s;
+  color: black;
+  transform: scale(1.2);
+}
+#create_acc:active {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0, 0.7);
+  transition-duration: 0.1s;
+  transform: scale(1.1);
 }

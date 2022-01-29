@@ -5,15 +5,19 @@
   /* box-sizing: border-box; */
   font-family: "Poppins", sans-serif;
 }
-body {
+body::before {
   margin: 0;
   padding: 0;
   /* height: 100vh;
   overflow: hidden; */
-  background-image: url(bg.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+  background: url(../images/bg-login.png) no-repeat center center/cover;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
 }
 .container {
   background-color: white;
@@ -23,7 +27,7 @@ body {
   transform: translate(-50%, -50%);
   width: 400px;
   border-radius: 10px;
-  box-shadow: 10px 10px 15px grey;
+  /* box-shadow: 10px 10px 15px grey; */
 }
 .container h1 {
   text-align: center;
@@ -65,13 +69,13 @@ form .login {
   left: 0;
   width: 0%;
   height: 2px;
-  background-color: rgb(20, 168, 218);
+  background-color: rgba(0, 0, 0, 0.8);
   transition-duration: 0.5s;
 }
 .login input:focus ~ label,
 .login input:valid ~ label {
   top: -5px;
-  color: rgb(20, 168, 218);
+  color: rgba(0, 0, 0, 0.8);
 }
 .login input:focus ~ span::before,
 .login input:valid ~ span::before {
@@ -79,9 +83,10 @@ form .login {
 }
 form .login_as {
   color: grey;
-  padding: 0 5px 5px 5px;
+  padding: 1px 8px 5px 5px;
   height: 40px;
   font-size: 16px;
+  width: 100%;
 }
 input[type="radio"] {
   margin: 0 5px 0 5px;
@@ -93,24 +98,49 @@ input[type="radio"] {
 }
 .forgot_pass:hover {
   text-decoration: underline;
+  color: black;
 }
 input[type="submit"] {
-  width: 100%;
-  height: 45px;
-  border: 1px solid rgb(20, 168, 218);
-  background-color: rgb(20, 168, 218);
-  border-radius: 25px;
-  font-size: 18px;
-  color: whitesmoke;
-  font-weight: 700;
+  /* padding: 0.75rem;
+  display: block;
+  padding: 7px;
+  text-decoration: none;
+  background-color: rgba(80, 68, 217, 0.8);
+  color: #f3f3f3;
+  text-align: center;
+  border-radius: 0.25rem;
   cursor: pointer;
-  outline: none;
+  transition: 0.3s;
+  border-radius: 20px;
+  width:93%;
+  margin: auto; */
+
+  color: #fff;
+  background: black;
+  border: 2px solid black;
+  text-transform: uppercase;
+  margin: 25px auto;
+  display: flex;
+  font-weight: 900;
+  letter-spacing: 2px;
+  padding: 7px 22px;
+  border-radius: 5px;
+  transition: transform, background-color 0.3s ease-in;
+  text-decoration: none;
 }
 input[type="submit"]:hover {
-  border-color: rgb(3, 3, 90);
-  background-color: rgb(53, 53, 199);
-  transition-duration: 0.5s;
+  background-color: #ffffff;
+  transition-duration: 0.3s;
+  color: black;
+  transform: scale(1.2);
 }
+input[type="submit"]:active {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0, 0.7);
+  transition-duration: 0.1s;
+  transform: scale(1.1);
+}
+
 .signup_link {
   margin: 30px 0;
   text-align: center;
@@ -118,7 +148,7 @@ input[type="submit"]:hover {
   color: grey;
 }
 .signup_link a {
-  color: rgb(20, 168, 218);
+  color: rgba(0, 0, 0, 0.8);
   text-decoration: none;
 }
 .signup_link a:hover {

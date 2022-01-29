@@ -15,7 +15,8 @@ let itemLink = {
                 leave:"./images/leaves.png", plastic:"./images/plastic.png",
                 glass:"./images/glass.png", cans:"./images/cans.png",
                 bulb:"./images/bulb.png", battery:"./images/battery.png",
-                chicken:"./images/food.png", paper:"./images/paper.png"
+                chicken:"./images/food.png", paper:"./images/paper.png",
+                upload:"./images/toothbrush.jpg",
               };
 
 nextBtns.forEach((btn) => {
@@ -27,7 +28,7 @@ nextBtns.forEach((btn) => {
       currProgress=0;
       progress_bar.setAttribute("aria-valuenow", 0);
       progress_bar.setAttribute("style", "width: "+0+'%');
-      progressInterval = window.setInterval(progressIncrease,1000);
+      progressInterval = window.setInterval(progressIncrease,500);
     }
     if(formStepsNum==2){
       window.clearInterval(progressInterval);
@@ -103,6 +104,7 @@ function setItemCount(organic, recyclable, electronic){
 
 function sort(){
   let checkedValue = document.querySelectorAll('.form-check-input');
+  recyclableWaste.push("upload");
   checkedValue.forEach((elm)=>{
     if(elm.checked){
       if(elm.value=="organic"){
@@ -188,4 +190,49 @@ function clearWasteArray(){
   organicWaste.length=0;
   recyclableWaste.length=0;
   electronicWaste.length=0;
+}
+
+function sendData(event){
+  event.preventDefault();
+  let totalWasteCount = organicWaste.length+recyclableWaste.length+electronicWaste.length;
+  let organicCount = organicWaste.length;
+  let recyclableCount = recyclableWaste.length;
+  let electronicCount = electronicWaste.length;
+
+  let data = {
+    email:"sumanmukherjee2001@gmail.com",
+    totalWasteCount:totalWasteCount,
+    organicWaste:{
+      total:organicCount,
+      waste: organicWaste
+    },
+    recyclableWaste:{
+      total:recyclableCount,
+      waste: recyclableWaste
+    },
+    electronicWaste:{
+      total:electronicCount,
+      waste: electronicWaste
+    },
+
+  }
+
+  axios.post('http://localhost:5000/api/waste/data',data).then((res)=>{
+    if(res.status==200){
+      console.log("Sent!");
+      alert("Data sent succesfully!");
+    }
+  }).catch((err)=>{
+    console.log(err);
+    alert(err.message);
+  })
+}
+
+function uploadImage(){
+  let input = document.getElementById("fileUpload");
+  let tempName = input.value;
+  let fileName = tempName.split("\\").pop();
+  let fileText = document.getElementById("file-name"); 
+  let text = document.createTextNode(fileName);
+  fileText.appendChild(text);
 }

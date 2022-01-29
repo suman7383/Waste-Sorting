@@ -1,15 +1,17 @@
 :root {
-  --primary-color: rgb(11, 78, 179);
+  --primary-color: rgb(0, 0, 0, 0.8);
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif !important;
 }
 
 body {
   background-color: #f2f2f2;
+  font-family: "Roboto", sans-serif !important;
 }
 
 .heading {
@@ -73,7 +75,7 @@ input {
 }
 
 .progress-custom {
-  background-color: rgba(90, 79, 219, 0.8);
+  background-color: rgba(0, 0, 0, 0.75);
   width: 0%;
   transition: 0.3s;
 }
@@ -104,7 +106,7 @@ input {
 }
 
 .progress-step-active {
-  background-color: rgba(90, 79, 219);
+  background-color: rgba(0, 0, 0, 1);
   color: #f3f3f3;
 }
 
@@ -153,7 +155,7 @@ input {
   display: block;
   padding: 7px;
   text-decoration: none;
-  background-color: rgba(80, 68, 217, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
   color: #f3f3f3;
   text-align: center;
   border-radius: 0.25rem;
@@ -164,6 +166,10 @@ input {
 
 .btn:hover {
   box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
+  background-color: #ffffff;
+  transition-duration: 0.3s;
+  color: black;
+  transform: scale(1.05);
 }
 
 .btn-me {
@@ -174,6 +180,7 @@ input {
 .btn-prev,
 .btn-send {
   width: 120px;
+  height: fit-content;
 }
 
 .main-box {
@@ -214,4 +221,51 @@ input {
 
 .item-count::after {
   content: attr(data-title);
+}
+
+.upload-box {
+  width: 80%;
+  display: flex;
+  align-items: center;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.upload-label {
+  cursor: pointer;
+  padding: 0.75rem;
+  display: block;
+  width: 120px;
+  padding: 7px;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #f3f3f3;
+  text-align: center;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 20px;
+  margin: 0 10px;
+}
+
+.upload-label:hover {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
+  background-color: #ffffff;
+  transition-duration: 0.3s;
+  color: black;
+  transform: scale(1.05);
+}
+
+.upload-text {
+  width: 200px;
+  font-size: smaller;
+  font-weight: bold;
+  line-height: 1.1;
+  text-align: center;
+}
+
+#file-name {
+  font-size: smaller;
 }
