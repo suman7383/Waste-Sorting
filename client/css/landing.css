@@ -282,18 +282,19 @@ header .navigation a:active{
 }
 
 .media-icons a:hover{
-    transition-duration: 0.3s;
+    transition-duration: 0.7s;
     transform: scale(1.5);
 
 }
 
-label{
+/* label .checkbtn{
     display: none;
 
 }
 #check{
     z-index:3;
-}
+} */
+
 .navigation a .btn{
     color:#fff;
     background:black ;
@@ -309,51 +310,7 @@ label{
 
 
 /* Responsive styles */
-@media(max-width:960px){
-    header .navigation{
-        display: none;
-    }
-    label{
-        display: block;
-        font-size:25px;
-        cursor: pointer;
-        transition:0.3s;
-        transition-property:color ;
-    }
-    label:hover{
-        color:rgb(0, 0, 0);
 
-    }
-    label .close-btn{
-        display: none;
-        
-    }
-    #checked:checked ~header .navigation{
-        z-index: 2;
-        position: fixed;
-        background: rgba(114, 223, 255, 0.9);
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        display: flex;
-        flex-direction:column ;
-        justify-content: center;
-        align-items: center;
-
-    }
-    #check:checked~header .navigation a{
-        font-weight:700 ;
-        margin: 0;
-        margin-bottom: 50px;
-        letter-spacing: 2px;
-    }
-
-    #check:checked ~header label .checkbtn{
-        display: none;
-    }
-
-}
 
 /* Responsive ends */
 
@@ -377,14 +334,86 @@ label{
 }
 
 .footer .footer-content{
-    border-bottom:1px solid rgb(54, 63, 94);
-    /* display: flex;
-    flex-wrap: wrap; */
+    border-bottom:2px solid rgb(54, 63, 94);
+    height: 88%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer .footer-content .about-us{
+    width: 48%;
+    margin: auto;
+    color:rgb(255, 255, 255);
+}
+
+
+.contact-us{
+    width:48% ;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     height: 350px;
 }
-/* .footer .footer-content .footer-section-aboutus{
 
-} */
+h3{
+    letter-spacing: 4px;
+    font-size: 25px;
+    margin-top: 1px;
+}
+.contact-form{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+}
+
+.contact-form input,textarea{
+    margin-bottom: 10px;
+}
+
+.contact-form textarea{
+    width: 421px; height: 81px;
+}
+
+#submit .btn{
+    background-color: rgba(255, 255, 255,0.94);
+    color: black;
+    border: 2px solid rgb(54, 63, 94);
+    border-radius: 5px;
+    margin: -3px 0 0 0;
+    padding: 3px 40px;
+    letter-spacing: 4px;
+    transition-property: background-color,transform;
+    transition: all 0.3s ease-in;
+}
+
+#submit .btn:hover{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    transform: scale(1.05);    
+}
+
+#submit .btn:active{
+    color: rgba(255, 255, 255, 1);
+    border: 2px solid rgb(255, 89, 89);
+}
+
+.about-us h3{
+    margin: 10px;
+}
+.about-us h4{
+    margin: 12px;
+}
+
+.about-us p{
+    margin: 30px;
+}
+#dev{
+    width: 100%;
+    margin: auto;
+}
 
 .footer .footer-bottom{
     background-color: rgba(0, 0, 0,0.7);
@@ -395,7 +424,6 @@ label{
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
 .footer-content::before{
